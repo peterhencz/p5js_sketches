@@ -17,33 +17,38 @@ function cica() {
 function draw() {
   noFill();
   push();
-  rotate(angle / 10);
-  translate(-80, -100);
-  bgc = color(180);
+  rotateX(angle / 100);
+  rotateY(angle / 10);
+  translate(400, 0);
+  bgc = color(10);
   background(bgc);
-  for (i = 5; i <= 40; i++) {
-    c = color(2 + i * 5, 50, 100);
 
-    rotateX(angle / 100);
+  for (i = 5; i <= 40; i++) {
+    c = color(2 + i * 5, 50, 100, (255 / i) * 2);
+    rotateX(angle / 10);
     stroke(c);
-    translate(i / 80, i / 5);
-    rotateY(angle / 50);
+    fill(c);
+    push();
+    translate(i / 80, i * 3);
+    rotateY(angle / 5);
     curve(
-      200,
-      10 * i,
+      200 * i,
+      1 / i,
       40,
-      80,
-      5 * i,
-      -4 * i,
-      -50,
-      i*4,
-      200,
-      60 * i,
-      -600,
-      -34,
-      300 * i,
-      40, 40, i*10
+      8,
+      500 / i,
+      -40 * i,
+      -5,
+      i * 4,
+      200 / i,
+      10 * i,
+      -60,
+      -340,
+      30 / i
     );
+    rotateX(angle / 5);
+
+    pop();
   }
 
   console.log(x, y);
@@ -60,6 +65,5 @@ function draw() {
   // rotate(angle);
   // stroke("#444");
   // line(0, 0, x, y);
-  pop();
   angle = angle + 1;
 }
