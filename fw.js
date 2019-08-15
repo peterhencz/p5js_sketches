@@ -23,8 +23,8 @@ function draw() {
   bgc = color(10);
   background(bgc);
 
-  for (i = 5; i <= 40; i++) {
-    c = color(2 + i * 5, 50, 100, (255 / i) * 2);
+  for (i = 5; i <= 20; i++) {
+    c = color(2 + i * 5, 50, 100, (255 / i) * 3);
     rotateX(angle / 10);
     stroke(c);
     fill(c);
@@ -32,18 +32,18 @@ function draw() {
     translate(i / 80, i * 3);
     rotateY(angle / 5);
     curve(
-      200 * i,
+      20 * i,
       1 / i,
       40,
       8,
-      500 / i,
+      5 / i,
       -40 * i,
       -5,
       i * 4,
       200 / i,
       10 * i,
       -60,
-      -340,
+      -34,
       30 / i
     );
     rotateX(angle / 5);
@@ -67,3 +67,7 @@ function draw() {
   // line(0, 0, x, y);
   angle = angle + 1;
 }
+
+// function mousePressed() {
+//   saveFrames("out", "png");
+// }
